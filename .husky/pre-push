@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "🧪 Running tests before pushing..."
+
+# Run TypeScript type checking
+echo "Checking types..."
+npm run typecheck || { echo "❌ Type checking failed"; exit 1; }
+
+# Run tests
+echo "Running tests..."
+npm test || { echo "❌ Tests failed"; exit 1; }
+
+echo "✅ All checks passed! Pushing to remote..."
