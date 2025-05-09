@@ -3,11 +3,6 @@ name: ESLint check
 on:
   pull_request:
     types: [opened, synchronize]
-<<<<<<< Updated upstream
-    branches:
-      - branchname
-=======
->>>>>>> Stashed changes
 
 jobs:
   eslint:
